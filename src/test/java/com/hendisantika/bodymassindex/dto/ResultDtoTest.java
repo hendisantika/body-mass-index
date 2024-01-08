@@ -62,4 +62,11 @@ class ResultDtoTest {
 
         assertEquals(resultDto.getDescription(), BMI_OBESITY_CLASS_THREE);
     }
+
+    @Test
+    public void bmiObesityClassThreeBis() {
+        ResultDto resultDto = new ResultDto(78);
+
+        assertEquals(resultDto.getDescription(), BMI_OBESITY_CLASS_THREE);
+    }
 }
