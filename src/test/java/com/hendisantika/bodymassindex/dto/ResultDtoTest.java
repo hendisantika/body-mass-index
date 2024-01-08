@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static com.hendisantika.bodymassindex.config.Constants.BMI_NORMAL;
 import static com.hendisantika.bodymassindex.config.Constants.BMI_OBESITY_CLASS_ONE;
+import static com.hendisantika.bodymassindex.config.Constants.BMI_OBESITY_CLASS_THREE;
 import static com.hendisantika.bodymassindex.config.Constants.BMI_OBESITY_CLASS_TWO;
 import static com.hendisantika.bodymassindex.config.Constants.BMI_OVERWEIGHT;
 import static com.hendisantika.bodymassindex.config.Constants.BMI_UNDERWEIGHT;
@@ -53,5 +54,12 @@ class ResultDtoTest {
         ResultDto resultDto = new ResultDto(37.7);
 
         assertEquals(resultDto.getDescription(), BMI_OBESITY_CLASS_TWO);
+    }
+
+    @Test
+    public void bmiObesityClassThree() {
+        ResultDto resultDto = new ResultDto(44.3);
+
+        assertEquals(resultDto.getDescription(), BMI_OBESITY_CLASS_THREE);
     }
 }
