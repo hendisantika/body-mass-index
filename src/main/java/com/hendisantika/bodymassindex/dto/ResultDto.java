@@ -2,6 +2,13 @@ package com.hendisantika.bodymassindex.dto;
 
 import lombok.Data;
 
+import static com.hendisantika.bodymassindex.config.Constants.BMI_NORMAL;
+import static com.hendisantika.bodymassindex.config.Constants.BMI_OBESITY_CLASS_ONE;
+import static com.hendisantika.bodymassindex.config.Constants.BMI_OBESITY_CLASS_THREE;
+import static com.hendisantika.bodymassindex.config.Constants.BMI_OBESITY_CLASS_TWO;
+import static com.hendisantika.bodymassindex.config.Constants.BMI_OVERWEIGHT;
+import static com.hendisantika.bodymassindex.config.Constants.BMI_UNDERWEIGHT;
+
 /**
  * Created by IntelliJ IDEA.
  * Project : body-mass-index
