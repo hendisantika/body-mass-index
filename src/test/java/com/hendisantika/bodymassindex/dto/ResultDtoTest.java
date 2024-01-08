@@ -1,5 +1,10 @@
 package com.hendisantika.bodymassindex.dto;
 
+import org.junit.jupiter.api.Test;
+
+import static com.hendisantika.bodymassindex.config.Constants.BMI_UNDERWEIGHT;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 /**
  * Created by IntelliJ IDEA.
  * Project : body-mass-index
@@ -11,5 +16,10 @@ package com.hendisantika.bodymassindex.dto;
  * To change this template use File | Settings | File Templates.
  */
 class ResultDtoTest {
+    @Test
+    public void bmiUnderweight() {
+        ResultDto resultDto = new ResultDto(10);
 
+        assertEquals(resultDto.getDescription(), BMI_UNDERWEIGHT);
+    }
 }
