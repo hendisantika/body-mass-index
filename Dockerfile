@@ -9,16 +9,18 @@ WORKDIR /project
 RUN mvn clean package
 
 #FROM adoptopenjdk/openjdk21:eclipse-temurin-21-alpine
-FROM bellsoft/liberica-openjdk-debian:21
+#FROM bellsoft/liberica-openjdk-debian:21
+#FROM openjdk:21-slim
+FROM amazoncorretto:21-alpine-jdk
 LABEL maintainer="hendisantika@yahoo.co.id"
 
 RUN mkdir /app
 
-RUN addgroup -g 1001 -S tecogroup
+RUN addgroup -g 1001 -S hendigroup
 
-RUN adduser -S teco -u 1001
+RUN adduser -S hendi -u 1001
 
-COPY --from=build /project/target/bmi-1.0.jar /app/bmi.jar
+COPY --from=build /project/target/body-mass-index-0.0.1.jar /app/bmi.jar
 
 WORKDIR /app
 

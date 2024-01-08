@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.hendisantika</groupId>
     <artifactId>body-mass-index</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>body-mass-index</name>
     <description>body-mass-index</description>
     <properties>
