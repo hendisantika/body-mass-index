@@ -92,7 +92,7 @@ jobs:
         env:
           SERVER_HOST: ${{ secrets.SERVER_HOST }}
           SERVER_PORT: ${{ secrets.SERVER_PORT }}
-          SERVER_USER: ${{ secrets.SERVER_USER }}
+          SERVER_USER: ${{ secrets.SERVER_USERNAME }}
         run: |
           set -e
           ./deploy.sh
