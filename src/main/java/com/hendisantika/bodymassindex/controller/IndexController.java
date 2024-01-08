@@ -1,9 +1,14 @@
 package com.hendisantika.bodymassindex.controller;
 
+import com.hendisantika.bodymassindex.dto.ResultDto;
 import com.hendisantika.bodymassindex.dto.UserInfoDto;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -24,6 +29,24 @@ public class IndexController {
         UserInfoDto userInfoDto = new UserInfoDto();
         userInfoDto.setHeight(40d).setWeight(2d);
         model.addAttribute("userInfo", userInfoDto);
+
+        return "index";
+    }
+
+    @PostMapping("/")
+    public String calculateBMI(
+            @ModelAttribute("userInfo") @Valid UserInfoDto userInfoDto,
+            BindingResult inputValidationResult,
+            Model model
+    ) {
+        if (inputValidationResult.hasErrors()) {
+            return "index";
+        }
+
+        double bmi = calculateBodyMassIndex(userInfoDto.getComputedHeight(), userInfoDto.getWeight());
+        ResultDto resultDto = new ResultDto(bmi);
+
+        model.addAttribute("result", resultDto);
 
         return "index";
     }
