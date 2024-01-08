@@ -8,7 +8,9 @@ WORKDIR /project
 
 RUN mvn clean package
 
-FROM adoptopenjdk/openjdk21:eclipse-temurin-21-alpine
+#FROM adoptopenjdk/openjdk21:eclipse-temurin-21-alpine
+FROM bellsoft/liberica-openjdk-debian:21
+LABEL maintainer="hendisantika@yahoo.co.id"
 
 RUN mkdir /app
 
