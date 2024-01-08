@@ -50,4 +50,11 @@ public class IndexController {
 
         return "index";
     }
+
+    private double calculateBodyMassIndex(double height, double weight) {
+        double bmi = weight / Math.pow(height, 2);
+        double bmiRounded = Math.round(bmi * 10);
+
+        return bmiRounded / 10;
+    }
 }
