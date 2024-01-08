@@ -3,6 +3,7 @@ package com.hendisantika.bodymassindex.dto;
 import org.junit.jupiter.api.Test;
 
 import static com.hendisantika.bodymassindex.config.Constants.BMI_NORMAL;
+import static com.hendisantika.bodymassindex.config.Constants.BMI_OVERWEIGHT;
 import static com.hendisantika.bodymassindex.config.Constants.BMI_UNDERWEIGHT;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -29,5 +30,12 @@ class ResultDtoTest {
         ResultDto resultDto = new ResultDto(22);
 
         assertEquals(resultDto.getDescription(), BMI_NORMAL);
+    }
+
+    @Test
+    public void bmiOverweight() {
+        ResultDto resultDto = new ResultDto(28.5);
+
+        assertEquals(resultDto.getDescription(), BMI_OVERWEIGHT);
     }
 }
