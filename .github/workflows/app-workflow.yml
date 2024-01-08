@@ -4,12 +4,12 @@ on:
     branches: [ main ]
     paths:
       - 'src/**'
-      - '.github/workflows/app-workflow.yaml'
+      - '.github/workflows/app-workflow.yml'
   push:
     branches: [ main ]
     paths:
       - 'src/**'
-      - '.github/workflows/app-workflow.yaml'
+      - '.github/workflows/app-workflow.yml'
 
 jobs:
   project-build:
