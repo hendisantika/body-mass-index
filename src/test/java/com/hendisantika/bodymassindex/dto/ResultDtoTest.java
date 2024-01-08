@@ -2,6 +2,7 @@ package com.hendisantika.bodymassindex.dto;
 
 import org.junit.jupiter.api.Test;
 
+import static com.hendisantika.bodymassindex.config.Constants.BMI_NORMAL;
 import static com.hendisantika.bodymassindex.config.Constants.BMI_UNDERWEIGHT;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -21,5 +22,12 @@ class ResultDtoTest {
         ResultDto resultDto = new ResultDto(10);
 
         assertEquals(resultDto.getDescription(), BMI_UNDERWEIGHT);
+    }
+
+    @Test
+    public void bmiNormal() {
+        ResultDto resultDto = new ResultDto(22);
+
+        assertEquals(resultDto.getDescription(), BMI_NORMAL);
     }
 }
