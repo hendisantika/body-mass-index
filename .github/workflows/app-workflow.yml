@@ -24,7 +24,7 @@ jobs:
           distribution: 'corretto'
 
       - name: Set up the Maven dependencies caching
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
@@ -51,7 +51,7 @@ jobs:
           distribution: 'corretto'
 
       - name: Cache Maven packages
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
@@ -79,8 +79,8 @@ jobs:
           file: Dockerfile
           push: true
           labels: ${{ steps.meta.outputs.labels }}
-          tags: hendisantika/bmi:${{ steps.meta.outputs.tags }}
-          #          tags: ${{ steps.meta.outputs.tags }}
+          #          tags: hendisantika/bmi:${{ steps.meta.outputs.tags }}
+          tags: ${{ steps.meta.outputs.tags }}
           #          tags: hendisantika/bmi:latest
           build-args: |
             GIT_VERSION_TAG=${{ env.RELEASE_VERSION }}
