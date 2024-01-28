@@ -4,7 +4,17 @@ RUN mkdir /project
 
 COPY . /project
 
+# Passed from Github Actions
+ARG GIT_VERSION_TAG=unspecified
+ARG GIT_COMMIT_MESSAGE=unspecified
+ARG GIT_VERSION_HASH=unspecified
+
 WORKDIR /project
+
+# You can read these files for the information in your application
+RUN echo $GIT_VERSION_TAG > GIT_VERSION_TAG.txt
+RUN echo $GIT_COMMIT_MESSAGE > GIT_COMMIT_MESSAGE.txt
+RUN echo $GIT_VERSION_HASH > GIT_VERSION_HASH.txt
 
 RUN mvn clean package
 
