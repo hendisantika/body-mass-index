@@ -32,3 +32,9 @@ Push Docker to Dockerhub
 ```shell
 docker push hendisantika/bmi:v1 hendisantika/bmi:v1
 ```
+
+### Image Screen shot
+
+Body Mass Index
+
+![Body Mass Index](img/bmi.png "Body Mass Index")
