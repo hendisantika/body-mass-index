@@ -90,6 +90,16 @@ jobs:
             GIT_COMMIT_MESSAGE=${{ github.event.head_commit.message }}
             GIT_VERSION_HASH=${{ github.sha }}
 
+  build_and_publish_to_ghcr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build and push the image
+        run: |
+          docker login --username hendisantika --password ${{ secrets.GH_PAT }} ghcr.io
+          docker build . --tag ghcr.io/hendisantika/bmi:${{ github.run_number }}
+          docker push ghcr.io/hendisantika/bmi:${{ github.run_number }}
+
   deploy:
     if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
